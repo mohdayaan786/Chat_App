@@ -1,4 +1,6 @@
 const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 const http = require('http');
 const socketio = require('socket.io');
 
@@ -45,7 +47,7 @@ app.get('/chat/:roomid', async (req, res) => {
     });
 });
 
-server.listen(3000, async () => {
+server.listen(3001, async () => {
     console.log('Server started');
     await connect();
     console.log("mongo db connected")
